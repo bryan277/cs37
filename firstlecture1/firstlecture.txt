@@ -1,0 +1,89 @@
+Algorithm- A finite set of ambiguous instructions performed in a prescribed sequence to achieve a desired outcome.
+-steps/instructions
+-certain sequence
+
+
+Rules- syntax
+
+
+Identifiers - any combinations of letters digits and underscores
+- case sensitive
+  ex. myage, myAge, MyAge
+
+Restrictions
+  - cannot match a keyword
+  - does not start with a digit
+  - may not contain a period
+
+Extraction operator
+  - Extracts data from the stream until it encounters white space
+
+
+Operators
+  Relational
+  >
+  <
+  >=
+  <=
+  Equality
+  == equal
+  != not equal
+
+  Precedence   Associate
+  ()           l to r
+  * / %         "
+  + -           "
+  << >>         "
+  < <= > >=     "
+  == !=         "
+  =             r to l
+
+  Manipulators
+  -global function designed to be used with the stream insertion/extraction operators
+  -kinds
+    -presistent or "sticky"
+    -non-persistent or single use
+
+#1
+cout << num1;
+
+#2
+cout << setprecision(2) << num1;
+
+#3
+cout << setprecision(3) << fixed << num1;
+
+Type    Value    Output#1  Output#2  Output#3
+Double  234.5678 234.568   2.3et002  234.568
+Float   13.9275  13.9275   14        13.927
+Int     15       15        15        15
+
+
+cout << "Enter 3 numbers: "
+cin >> x >> y >> z;
+
+Enter 3 numbers: 4_7_10\n press enter
+
+
+cout << "Enter a line of text: ";
+cin >> line;
+
+cout << line; => The
+
+
+cin.ignore();  //discord 1 characters
+cin.ignore(30);  //discorerd 30 characters
+cin.ignore(80, '\n');  //discard 80 characters or discard up to and including the delimiter
+
+
+getline(cin, string_variable_name);
+
+string line;
+getline(cin, line);
+
+#include <string>
+
+The quick for.\n
+cin >> num;
+cin.ignore();
+getline(cin,line);
