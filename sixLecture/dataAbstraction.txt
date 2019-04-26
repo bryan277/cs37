@@ -1,0 +1,81 @@
+4 good reason/data abstraction/encapsulation
+1. changes in one area of the code don't require changes in their areas
+2. Ease of use
+3. Prevent accidents/ incomplete changes
+4. Simplifies debugging
+
+
+Getters - accessors
+    - return value/s of data member/s   typically getters will not take an argument
+
+Setters = mutators
+    - to change the value of data member/s 
+
+
+class B
+{
+    public:
+        void setVal1(int nx);
+        void setVal2(int ny);
+        int getVal1();
+        int getVal2();
+        void getVals(int &nx, int &ny);
+    private:
+        int x, y;
+};
+
+
+class Rectangle
+{
+    public:
+        void setHeigt();
+        void setLength();
+        int getHeight();
+        int getLength();
+    private:
+        int height, length;
+};
+
+Rectangle myR1;
+myR1.setHeight(10);
+myR1.setLength(7);
+
+Rectangle myR2;
+myR2 = myR1; //can we do that?  copy assignment operator
+mystery(myR2); //copy constructor
+
+myR1
+height = 10
+length = 7
+
+myR2
+height = 10
+length = 7
+
+
+void mystery(Rectangle mysRobj);
+
+constructor
+destructor
+copy assignment operator
+copy constructor
+
+Rectangle myR3 = myR1 + myR2; ??? //not valid
+                 Rectangle
+
+Rectangle operator+(const Rectangle &trec); //declration
+//Rectangle Rectangle::operator+(const Rectangle & trec)
+{
+    int nheight = height + trec.height;
+    int nlength = length + trec.length;
+
+    Rectangle temp(nheight, nlength);
+
+    return temp;
+}
+
+Rectangle myR3 = myR1 + myR2;   myR1 + myR2 is the same as myR1.operator(myR2);
+                 LH     RH                                 DONT USE THIS
+
+
+

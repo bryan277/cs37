@@ -1,0 +1,20 @@
+7 march 2019
+
+Friend functions
+-global functions
+-member functions of another class
+-gives the function access not only to public members of the class but to non-public members as well
+
+class Point
+{
+    friend ostream& operator << (ostream &output, const Point &oPt);
+};
+
+ostream& operator < (ostream &output, const Point &oPt)
+{
+    output << "(" << oPt.getX() << "," << oPt.getY() << ")";
+    return output;
+}
+
+
+

@@ -1,0 +1,154 @@
+key concepts- oop
+
+data abstraction - is a programming and design technique that depends on the separation of interface and implementation 
+interface - of a class consists of the operations that users of the class can execute
+implementation - of a class consists of the class' data members, bodies of public functions not intended for public use 
+encapsulation - enforces the separation of interface and implementation
+
+A class that encapsulated, proctects (hides) its implementation
+
+private access specifier
+
+A class that adheres to the principles of data abstraction and encapsulation defines an abstracts data type 
+
+
+class Example
+{
+    private
+}
+
+
+struct Example
+{
+    public 
+}
+
+
+
+
+class Thing1
+{
+    public:
+        int x,y;
+};
+
+class Thing2
+{
+    private:
+        int x,y;
+
+    public: 
+        void setVals(int mx, int my)
+        {
+            x = mx;
+            y = my;
+        }
+
+        void displayVals()
+        {
+            cout << "x: " << x << endl;
+            cout << "y: " << y << endl;
+        }
+};
+
+
+        Data abst  encapsulated  ADT
+Thing1    No          No         No
+Thing2    Yes         Yes        Yes 
+
+
+Constructor
+
+class Rectangle
+{
+    private:
+    int height, length;
+
+    public:
+    void setVals(_,_);
+    int getHeight();
+    int getLength():
+};
+
+Rectangle myR1;
+
+cout << myR1.getHeight();
+
+myR1
+height = ?   (implementation)
+length = ?   (implementation)
+setVals()     (interface)
+getHeight()   (interface)
+getLength()   (interface) 
+
+Constructor
+-Often objects need to do some kind of initialization before they are "operational"
+    -avoids unexptected results 
+-special
+    -automtically called when an object of the class is instantiated
+-constructor must excist for the class
+
+Facts
+-same name as the class
+-cannot have a return type 
+-cannot be called explicitly *
+-can be overloaded (can have the same name)
+
+
+
+class Rectangle
+{
+    public:
+        Rectangle();  // default constructors, interface, not explicitly, function declaration (protoyptes)
+        Rectangle(int ihgt, int ilen); // constructors , interface, not explicitly , function declaration (protoyptes)
+        void setValues(int ihgt, int ilen); // interface, function declaration (protoyptes)
+        int getHeight(); // interface, function declaration (protoyptes)
+        int getHeight(); // interface, function declaration (protoyptes)
+
+    private:
+        int height, length;
+}
+
+Rectangle::Rectangle()
+{
+    height = 0;
+    length = 0;
+}
+
+Rectangle::Rectangle(int ihgt, int ilen)
+{
+    height = ihgt;
+    length = ilen;
+}
+
+void Rectangle::setValues(int ihgt, int ilen) //  5     6
+{
+    height = ihgt;
+    length = ilen;
+}
+
+int Rectangle::getHeight()
+{
+    return height;
+}
+
+int Rectangle::getLength()
+{
+    return length;
+}
+
+myR1
+height = 0
+lenght = 0
+
+Rectangle myR1;
+cout << myR1.getHeight(); // default
+
+Rectangle myR2(5,6);
+
+
+Combined
+Rectangle(int ihgt = 0; int ilen = 0);
+
+
+Another piece in separating interface and implementation

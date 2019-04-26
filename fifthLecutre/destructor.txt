@@ -1,0 +1,36 @@
+Destructor
+- has the same name as the class but prefixed by a '~' (tilde)
+    ~ Rectangle():g
+- has no return type
+- cannot be overloaded
+- cannot be called explicitly
+
+
+Destructors are useful for doing "housekeeping" -release memory that has been allocated dynamically 
+
+
+class Rectangle
+{
+    private:
+        int *height, *length;
+    public:
+        Rectangle(int ight = 0, int ilen = 0);
+       ~Rectangle();
+};
+
+Rectangle::Rectangle(int ihgt, int ilen)
+{
+    height = new int;
+    length = new int;
+
+    *height = ihgt;
+    *length = ilen;
+}
+
+Rectangle::~Rectangle()
+{
+    delete height;
+    delete length;
+}
+
+Rectangle myR1(5, 7);

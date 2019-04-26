@@ -1,0 +1,104 @@
+Preprocessor directives:
+    #include <iostream>
+    - it is the predefined used for input and output and is also called header files
+    - iostream is the header file which contains all the functions of program like cout, cin etc. and # inlcude tells the preprocessor to inlcude these header file in the program
+    - allows you to write shorter code
+    #include <iomanip>
+    - It defines the manipulator functions resestiosflags(), setiosflags(), setbase(), setfill(), 
+    setprecision(), and setw(). These functions may be convenietly used by C++ 
+    prgrams to affect the state of iostream objects.
+    #include <string>
+    - cout << "this is a string" In order to use the string data type, c++ string header <string> must be included at the top of the program. Also, 
+    you'll need to include using namespace std; to make the short string visible instead of requiring the cumbersome std::string
+
+
+cout-
+    - default device its associated with it (stream insertion operator)
+        <<
+    - default justification
+        - The default is right-justified
+    - default precision
+        - The default precision is 6 spaces
+        - int main()
+            {
+                double pi = 4.123123123123;
+                std::cout << "default precision (6): " << pi << '\n'
+                        << "std::setprecision(10): " << std::setprecision(10) << pi << '\n';
+            }
+
+            // default precision (6): 3.14159
+            // std::setprecision(10): 3.141592654
+            
+
+
+cin- 
+    - default device its associated with it (stream extraction operator)
+        >> 
+    - limitations in terms of strings
+
+    - how it handles white space
+
+manipulators
+    -endl
+        - Inserts a new-line character and flushes the stream
+        - Its behavior is equivalent to calling os.put('/n')
+        - cout << x << endl; is equivalent to cout << x << '\n';
+                                              cout.flush();
+    
+    -fixed
+        - sets the floatfield format flag for the str stream to fixed
+
+    -left
+        - sets the adjustfield format flag for the str stream to left 
+
+    -right 
+        - sets the adjustfield format flag for the str stream to right 
+
+    - setw
+        - sets the field width to be used on output operations 
+
+
+    functions and methods
+        - getline()
+            - Extracts characters from is and stores them into str until the delimitation character delim is found (or the newline character, '\n', for (2)).
+
+        - cin.ignore()
+            -
+
+    Variables:
+        - definition of different types
+            - bool
+                - stores either value true or false
+            - char 
+                - Typically a single octet (one byte). This is an integer type
+            - int
+                - The most natural size of integer for the machine
+            - float 
+                - single-precisision floating point value
+            - double
+                - a double-precision floating point value
+            - void
+                - represents the absence of type
+    Variables (copy paste from notes)
+            -named storage loaction/memory
+            -attributes
+            - Type
+            - size - how much memory allocated
+            - value - value assigned to the Variable in the program
+            - scope - where in the program the Variable can be used/has a certain meaning
+            - address - the actual location in memory
+            - "normal"
+            - pointer  int *iptr = &x;
+            - deference y = *iptr; // the star is the deference
+            - reference
+                - defines an alternative name/Identifiers for an existing object
+                    - alias (like people (Bill))
+                    int ival = 1024;
+                    int &refVal = ival; //&refVal is the reference
+                    refVal = refVal*2;                                  ival/reVal = 2048
+                    - must be inialized when defined
+                    -int &refVal3; DONT DO THIS
+    
+        - "normal"
+            -
+

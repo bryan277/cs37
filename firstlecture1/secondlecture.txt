@@ -1,0 +1,77 @@
+Streams
+cout, cin
+>> extraction op.  it will stop at white space
+<< insertion op.
+std namespace
+
+Manipulators
+setw
+setprecision
+letf
+right
+fixed
+
+cin.getline()
+cin.ignore()
+
+
+Control structures
+-sequence (its build in C++ and most language)
+-selection
+ - if                 ?  :
+ - if/else  |  conditional operator
+ - switch
+
+
+ if (grade >= 60)
+    cout << "Passed";
+  else
+    cout << "Failed";
+
+cout << (grade >= 60 ? "Passed" : "Failed");
+
+
+Repetition/iteration
+-while loop
+-do/while (it guarantues goes through at least once)
+-for loop
+
+Variables
+-named storage loaction/memory
+  -attributes
+   - Type
+   - size - how much memory allocated
+   - value - value assigned to the Variable in the program
+   - scope - where in the program the Variable can be used/has a certain meaning
+   - address - the actual location in memory
+   - "normal"
+   - pointer  int *iptr = &x;
+   - deference y = *iptr; // the star is the deference
+   - reference
+      - defines an alternative name/Identifiers for an existing object
+        - alias (like people (Bill))
+        int ival = 1024;
+        int &refVal = ival; //&refVal is the reference
+        refVal = refVal*2;                                  ival/reVal = 2048
+        - must be inialized when defined
+         -int &refVal3; DONT DO THIS
+
+
+Functions
+  - break program into smaller pieces
+   - divide/conquer
+  - software reuse
+  - avoid repeating code DRY dont repeat yourself
+  - declared
+    - prototype
+  - defined
+    - the actual code of the function
+  - called/invoked
+    - actually making use of the function (main is the main boss)
+  - return type
+    - may or may not have one
+      - Void - if not returning
+  - passing arguments
+      - by value
+      - by address/pointer
+      - by reference 

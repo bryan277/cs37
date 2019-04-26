@@ -1,0 +1,138 @@
+Basic facts - overloaded operators
+-Precedence is/cannot be changed '+'
+-Associativty stays the same 
+-Cannot change the 'arity' - # of operands
+-cannot create new operators
+
+operands that cannot be overloaded
+::
+.*   a.xb
+.
+?:
+
+Operators overloading works only when at least one operand is of a user-defined type
+
+Point p1, p2, p3;
+
+p3 = p1 + p2;  =>   p1.operator + (p2);  //member function
+                    operator(p1, p2);    //non-member 
+
+Point + Point = Point
+Point + int => Point
+int + Point => Point //commutative 2+3 is same as 3+2
+int.operator + (Point); // not an option
+
+Point   Point::operator + (int nint)
+{
+    int nx = x + nint;      // x and y are the member function
+    int ny = y + nint;
+
+    return Point(nx, ny);
+}
+
+Point operator + (const &pRef, int nint)
+{                (int nint, const Point &pRef)
+    int nx = pRef.getX() + nint;  //non-memberr function
+    int ny = pRef.getY() + nint;
+    return Point(nx, ny);
+}
+    ostream = <<
+cout << "Point # 1 is: " << myP1 << endl;           Point myP1;
+|_______________________|
+        ostream 
+    |____________________________|
+                ostream 
+
+Point # 1 is: (7,5)
+
+cout/output/?
+Point # 1 is: (7,5)
+
+ostream& operator << (ostream &output, const Point &oPt)
+{
+    output << "(" << oPt.getX() << "," << oPt.getY() << ")";
+    return output;
+}     
+
+cin >> myPt;   //3,4
+
+istream& operator >>(istream &input, Point &iPt)
+{
+    int tx, ty;
+    input >> tx;
+    input.ignore();
+    input >> ty;
+    iPt.setX(tx);
+    iPt.setY(ty);
+
+    return input;
+}
+
+const Point origin;
+Point myP1(4,5);
+
+cout << origin + myP1 << endl;
+
+Point Point::operator + (const Point & pRef) 
+{
+    return Point(x + pRef.x, y + pRef.y);
+}
+
+#include <iostream>
+
+using namespace std;
+
+class Fraction
+{
+private:
+int numerator,denominator;
+public:
+Fraction()
+{
+numerator=0;
+denominator=0;
+}
+Fraction(int num,int denom)
+{
+numerator=num;
+denominator=denom;
+}
+int getNumerator()
+{
+return numerator;
+}
+int getDenomirator()
+{
+return denominator;
+}
+Fraction operator + (const Fraction& f2)
+{
+Fraction temp(numerator * f2.denominator + f2.numerator * denominator,
+denominator * f2.denominator);
+return temp;
+}
+Fraction operator - (const Fraction& f2)
+{
+Fraction temp(numerator * f2.denominator - f2.numerator * denominator,
+denominator * f2.denominator);
+return temp;
+}
+
+};
+int main()
+{
+
+Fraction f1(5,7);
+Fraction f2(2,3);
+Fraction f3=f1+f2;
+Fraction f4=f1-f2;
+
+cout<<"\nNumerator:"<<f1.getNumerator()<<" Denomirator:"<<f1.getDenomirator()<<endl;
+cout<<"\nNumerator:"<<f2.getNumerator()<<" Denomirator:"<<f2.getDenomirator()<<endl;
+cout<<"\nNumerator:"<<f3.getNumerator()<<" Denomirator:"<<f3.getDenomirator()<<endl;
+cout<<"\nNumerator:"<<f4.getNumerator()<<" Denomirator:"<<f4.getDenomirator()<<endl;
+
+
+return 0;
+}
+

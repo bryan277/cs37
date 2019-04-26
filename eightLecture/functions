@@ -1,0 +1,49 @@
+class Fraction
+{
+    public:
+        void setNum(int nn);  =>  void   (compiler transformation)
+}
+#include<iostream>
+using namespace std;
+class Version
+{
+public:
+int major, minor, service_pack;
+Version& setMinor(int minor)
+{
+this->minor = minor;
+return *this;
+}
+Version& setMajor(int major)
+{
+this->major = major;
+return *this;
+}
+Version& setService_pack(int s_pack)
+{
+this->service_pack = s_pack;
+return *this;
+}
+int getMinor()
+{
+return this->minor;
+}
+int getMajor()
+{
+return this->major;
+}
+int getService_pack()
+{
+return this->service_pack;
+}
+};
+int main()
+{
+int minor,major,service_pack;
+Version obj;
+cout<<"\nEnter minor, major, and service pack : "<<endl;
+cin>>minor>>major>>service_pack;
+obj.setMinor(minor).setMajor(major).setService_pack(service_pack); //cascading calls
+cout<<"Minor: "<<obj.getMinor()<<"\nMajor: "<<obj.getMajor()<<"\nService Pack: "<<obj.getService_pack();
+return 0;
+}
